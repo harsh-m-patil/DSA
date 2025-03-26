@@ -34,7 +34,7 @@ class KadanesAlogrithm {
       right++;
     }
 
-    return new int[] { maxLeft, maxRight };
+    return new int[] {maxLeft, maxRight};
   }
 
   public static int bruteForce(int[] nums) {
