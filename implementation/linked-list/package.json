@@ -1,0 +1,17 @@
+{
+	"name": "binary-tree",
+	"module": "index.ts",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"test": "vitest"
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"vitest": "^3.0.9"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	}
+}
+

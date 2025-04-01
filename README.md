@@ -374,7 +374,48 @@ int linearSearch(int[] arr, int target) {
 
 ---
 
-### 7. Graph Traversal
+### 7. Binary Tree Traversal
+
+#### BFS
+
+```java
+class Solution {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        Queue<TreeNode> q = new LinkedList<>();
+        List<List<Integer>> outer = new ArrayList<>();
+
+        if(root == null) {
+            return outer;
+        }
+
+        q.add(root);
+
+        while(!q.isEmpty()){
+            int size = q.size();
+            List<Integer> inner = new ArrayList<>();
+
+            for(int i = 0; i < size; i++) {
+                TreeNode curr = q.poll();
+                inner.add(curr.val);
+
+                if(curr.left != null) {
+                    q.add(curr.left);
+                }
+
+                if(curr.right != null) {
+                    q.add(curr.right);
+                }
+            }
+
+           outer.add(inner);
+        }
+
+        return outer;
+    }
+}
+```
+
+### 8. Graph Traversal
 
 > Systematically visits all vertices in a graph. Used for finding paths, detecting cycles, and exploring graph properties.
 
@@ -494,7 +535,7 @@ int result = fibonacciMemo(n,memo);
 
 ---
 
-### 9. Kadane's Algorithm
+### 10. Kadane's Algorithm
 
 > Finds the maximum sum of a contiguous subarray in a one-dimensional array.
 
@@ -546,7 +587,7 @@ boolean hasCycle(ListNode head) {
 
 ---
 
-### 11. Prefix Sum
+### 12. Prefix Sum
 
 > Calculates the cumulative sum of elements up to each index in an array. Allows for efficient calculation of sums of subarrays.
 
@@ -571,7 +612,7 @@ int rangeSum(int[] prefix, int l, int r) {
 
 ---
 
-### 12. Iterative DFS
+### 13. Iterative DFS
 
 > Performs Depth-First Search using a stack instead of recursion.
 
@@ -647,7 +688,7 @@ void generateSubsets(int[] nums, int index, List<Integer> current, List<List<Int
 
 ---
 
-### 14. Combinations
+### 15. Combinations
 
 > Generates all possible combinations of a specified size from a given set.
 
@@ -676,7 +717,7 @@ void generateCombinations(int n, int k, int start, List<Integer> current, List<L
 
 ---
 
-### 15. Permutations
+### 16. Permutations
 
 > Generates all possible orderings (permutations) of the elements of a set.
 
@@ -712,7 +753,7 @@ void generatePermutations(int[] nums, List<Integer> current, boolean[] used, Lis
 
 ---
 
-### 16. Subarray
+### 17. Subarray
 
 > A contiguous part of an array. The following shows how to extract a subarray.
 
@@ -724,3 +765,4 @@ int end = 4; // Exclusive
 int[] subArray = Arrays.copyOfRange(arr, start, end); // {2, 3, 4}
 
 ```
+
