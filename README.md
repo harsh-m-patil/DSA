@@ -766,3 +766,46 @@ int[] subArray = Arrays.copyOfRange(arr, start, end); // {2, 3, 4}
 
 ```
 
+### 18. Bit Manipulation
+
+> Efficiently performs operations on binary representations of integers. Common operations include AND, OR, XOR, NOT, and bit shifts.
+
+```java
+// Example: Check if a number is even or odd
+int num = 5;
+boolean isEven = (num & 1) == 0; // Even if last bit is 0
+boolean isOdd = (num & 1) == 1; // Odd if last bit is 1
+// Example: Count the number of set bits (1s) in an integer
+int countSetBits(int n) {
+    int count = 0;
+    while (n > 0) {
+        count += n & 1; // Increment count if last bit is 1
+        n >>= 1; // Right shift to check next bit
+    }
+    return count;
+}
+// Example: Swap two numbers without a temporary variable
+int a = 5;
+int b = 10;
+a = a ^ b; // Step 1: a now holds the XOR of a and b
+b = a ^ b; // Step 2: b now holds the original value of a
+a = a ^ b; // Step 3: a now holds the original value of b
+
+// Example: Check if a number is a power of 2
+boolean isPowerOfTwo(int n) {
+    return (n > 0) && ((n & (n - 1)) == 0); // A power of 2 has only one bit set
+}
+// Example: Find the unique number in an array where every other number appears twice
+int findUnique(int[] arr) {
+    int unique = 0;
+    for (int num : arr) {
+        unique ^= num; // XOR all numbers, duplicates cancel out
+    }
+    return unique;
+}
+
+// Example: Left shift and right shift
+int leftShift = 5 << 1; // Multiplies by 2
+int rightShift = 5 >> 1; // Divides by 2
+
+```
