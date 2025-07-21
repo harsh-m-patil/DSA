@@ -1,4 +1,4 @@
-package arrays;
+package algorithms.arrays;
 
 // 1672. Richest Customer Wealth You are given an m x n integer grid accounts
 // https://leetcode.com/problems/richest-customer-wealth/description/

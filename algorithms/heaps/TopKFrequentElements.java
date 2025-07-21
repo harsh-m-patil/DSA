@@ -1,4 +1,4 @@
-package heap;
+package algorithms.heaps;
 
 import java.util.HashMap;
 import java.util.Map;

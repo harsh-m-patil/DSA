@@ -1,4 +1,4 @@
-package heap;
+package algorithms.heaps;
 import java.util.Arrays;
 
 class MinHeap {
